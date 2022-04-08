@@ -1,0 +1,32 @@
+.entry-form {
+  width: 70%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background-color: rgba(0, 255, 255, 0.355);
+  margin: 0 auto;
+}
+
+.expensesListItem {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(241, 241, 241);
+  padding: 13px 20px 0px 20px;
+  margin: 4px;
+}
+
+.amount-and-trash {
+  display: flex;
+  justify-content: space-between;
+
+  .amount {
+    margin-right: 15px;
+  }
+
+  .bi-trash {
+    cursor: pointer;
+  }
+}

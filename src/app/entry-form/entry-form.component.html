@@ -1,0 +1,39 @@
+<form [formGroup]="entryForm" (ngSubmit)="onSubmit()" class="entry-form">
+  <div class="row g-3">
+    <div class="col-sm-3">
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Amount"
+        aria-label="amount"
+        formControlName="amount"
+      />
+    </div>
+    <div class="col-sm-6">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Description"
+        aria-label="description"
+        formControlName="description"
+      />
+    </div>
+    <div class="col-sm">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+<hr />
+
+<div class="list">
+  <div class="expenses">
+    <h3>Expenses</h3>
+    <div *ngFor="let expense of expenses" class="expensesListItem">
+      <p>{{ expense.desc }}</p>
+      <div class="amount-and-trash">
+        <p class="amount">{{ expense.amount }}</p>
+        <i class="bi bi-trash"></i>
+      </div>
+    </div>
+  </div>
+</div>
