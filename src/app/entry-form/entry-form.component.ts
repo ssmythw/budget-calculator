@@ -10,8 +10,14 @@ export class EntryFormComponent implements OnInit {
   constructor() {}
 
   @Output() submitClicked: any = new EventEmitter();
-  income: any[] = [];
-  expenses: any[] = [];
+  income: any[] = [{ id: 0, amount: 1500, desc: 'This is income' }];
+  expenses: any[] = [
+    {
+      id: 0,
+      amount: -1000,
+      desc: 'This is an expense',
+    },
+  ];
 
   entryForm = new FormGroup({
     amount: new FormControl(),
@@ -27,13 +33,23 @@ export class EntryFormComponent implements OnInit {
     const desc = this.entryForm.value.description;
 
     if (amount > 0) {
-      this.income.push({ amount, desc });
+      this.income.push({ id: this.income.length, amount, desc });
       console.log(this.income);
     } else {
-      this.expenses.push({ amount, desc });
+      this.expenses.push({ id: this.expenses.length, amount, desc });
       console.log(this.income);
     }
 
     this.entryForm.reset();
+  }
+
+  deleteItem(item: any) {
+    if (item.amount > 0) {
+      console.log('income');
+      this.income = this.income.filter((val) => val.id != item.id);
+    } else {
+      console.log('expense');
+      this.expenses = this.expenses.filter((val) => val.id != item.id);
+    }
   }
 }

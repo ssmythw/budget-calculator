@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'budget-app';
+  amount = 1;
   parentEventHandler(event: any) {}
 }

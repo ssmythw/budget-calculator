@@ -3,7 +3,7 @@
 </div>
 <div class="total-amount-container">
   <section class="total-amount">
-    <h1>1500</h1>
+    <h1 [ngClass]="amount > 0 ? 'green' : 'red'">{{ amount }}</h1>
   </section>
 </div>
 <app-entry-form (submitClicked)="parentEventHandler($event)"></app-entry-form>

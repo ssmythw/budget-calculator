@@ -24,15 +24,24 @@
   </div>
 </form>
 <hr />
-
 <div class="list">
   <div class="expenses">
-    <h3>Expenses</h3>
-    <div *ngFor="let expense of expenses" class="expensesListItem">
+    <h3 class="expenseTitle">Expenses</h3>
+    <div *ngFor="let expense of expenses" class="listItem">
       <p>{{ expense.desc }}</p>
       <div class="amount-and-trash">
         <p class="amount">{{ expense.amount }}</p>
-        <i class="bi bi-trash"></i>
+        <i (click)="deleteItem(expense)" class="bi bi-trash"></i>
+      </div>
+    </div>
+  </div>
+  <div class="income">
+    <h3 class="incomeTitle">Income</h3>
+    <div *ngFor="let income of income" class="listItem">
+      <p>{{ income.desc }}</p>
+      <div class="amount-and-trash">
+        <p class="amount">{{ income.amount }}</p>
+        <i (click)="deleteItem(income)" class="bi bi-trash"></i>
       </div>
     </div>
   </div>

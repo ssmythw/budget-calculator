@@ -4,18 +4,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  //background-color: rgba(0, 255, 255, 0.355);
   margin: 0 auto;
 }
 
-.expensesListItem {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: rgb(241, 241, 241);
-  padding: 13px 20px 0px 20px;
-  margin: 4px;
+.list {
+  margin: 0 auto;
+  width: 55%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .listItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 13px 20px 0px 20px;
+    margin: 4px;
+    background-color: rgb(232, 232, 232);
+    display: inline-block;
+    word-wrap: break-word;
+    width: 300px;
+  }
+
+  .expenseTitle {
+    color: red;
+  }
+  .incomeTitle {
+    color: green;
+  }
+}
+
+.expenses .amount {
+  color: red;
+}
+
+.income .amount {
+  color: green;
 }
 
 .amount-and-trash {
