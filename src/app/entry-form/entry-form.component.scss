@@ -8,10 +8,11 @@
 }
 
 .list {
-  margin: 0 auto;
-  width: 55%;
+  margin: 0 350px;
+  width: 50%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  padding-left: 150px;
 
   .listItem {
     display: flex;
@@ -22,7 +23,7 @@
     background-color: rgb(232, 232, 232);
     display: inline-block;
     word-wrap: break-word;
-    width: 300px;
+    width: 225px;
   }
 
   .expenseTitle {
