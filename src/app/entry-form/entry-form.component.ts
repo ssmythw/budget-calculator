@@ -10,14 +10,8 @@ export class EntryFormComponent implements OnInit {
   constructor() {}
 
   @Output() submitClicked: any = new EventEmitter();
-  income: any[] = [{ id: 0, amount: 1500, desc: 'This is income' }];
-  expenses: any[] = [
-    {
-      id: 0,
-      amount: -1000,
-      desc: 'This is an expense',
-    },
-  ];
+  income: any[] = [];
+  expenses: any[] = [];
 
   entryForm = new FormGroup({
     amount: new FormControl(),
@@ -28,7 +22,7 @@ export class EntryFormComponent implements OnInit {
 
   onSubmit() {
     // Send amount to the parent component and update the total value.
-    this.submitClicked.emit(this.entryForm);
+    this.submitClicked.emit(this.entryForm.value.amount);
     const amount = this.entryForm.value.amount;
     const desc = this.entryForm.value.description;
 
@@ -44,6 +38,7 @@ export class EntryFormComponent implements OnInit {
   }
 
   deleteItem(item: any) {
+    this.submitClicked.emit({ amount: item.amount, deleteFlag: true });
     if (item.amount > 0) {
       console.log('income');
       this.income = this.income.filter((val) => val.id != item.id);

@@ -8,5 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'budget-app';
   amount = 1;
-  parentEventHandler(event: any) {}
+  parentEventHandler(amount: any) {
+    //check if deleted item
+    if (amount.deleteFlag == true) {
+      console.log('deleting item');
+      this.amount = this.amount - amount.amount;
+    } else {
+      this.amount = this.amount + amount;
+    }
+  }
 }
